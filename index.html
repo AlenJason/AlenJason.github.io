@@ -1,0 +1,282 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Roblox game developer portfolio of Nguyễn Thiên: founder of Aerospace Studio, creator of Attack on Titan: Wings of Freedom (146K+ visits).">
+<meta property="og:title" content="Nguyễn Thiên – Roblox Game Developer">
+<meta property="og:image" content="https://alenjason.github.io/games/aot-thumb1.jpg">
+<link rel="icon" href="games/studio-icon.jpg">
+<title>Nguyễn Thiên Roblox Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Be+Vietnam+Pro:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a "studio build sheet" — red masthead like the CV, then a reel grid, system cards with real stat lines (Mana / Cooldown), a numbered AI workflow, and a dated timeline. */
+:root{
+  --bg:#FFF4E6;         /* CV cream */
+  --surface:#FFFBF4;
+  --ink:#2A1512;
+  --muted:#6E5650;
+  --brand:#9E0B0B;      /* CV crimson */
+  --brand-ink:#FFF4E6;
+  --line:#E9D5C3;
+  --chip:#F6E3D2;
+  --display:"Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1A0F0D;--surface:#241513;--ink:#F6E7DA;--muted:#C2A79C;--brand:#D9332B;--brand-ink:#FFF4E6;--line:#3D2722;--chip:#33201C;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1A0F0D;--surface:#241513;--ink:#F6E7DA;--muted:#C2A79C;--brand:#D9332B;--brand-ink:#FFF4E6;--line:#3D2722;--chip:#33201C;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1080px;margin:0 auto;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,4vw,40px);color:var(--brand)}
+h3{font-size:20px}
+p{margin:0}
+a{color:var(--brand)}
+a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.section-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;border-bottom:2px solid var(--brand);padding-bottom:10px;margin-bottom:24px}
+
+/* masthead */
+.mast{margin-inline:-16px;background:var(--brand);color:var(--brand-ink);padding:40px 16px 36px}
+.mast-in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:center}
+.mast img{width:160px;aspect-ratio:217/324;object-fit:cover;border-radius:10px;border:4px solid var(--brand-ink);max-width:100%}
+.mast h1{font-size:clamp(44px,8vw,84px);line-height:1.25;margin-top:18px}
+.mast .role{font:500 clamp(16px,2.2vw,20px)/1.3 var(--body);margin-top:8px;opacity:.95}
+.mast .lede{margin-top:16px;max-width:62ch;opacity:.92}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.links a{color:var(--brand-ink);text-decoration:none;border:1.5px solid var(--brand-ink);border-radius:999px;padding:6px 14px;font-weight:500;font-size:14px}
+.links a:hover{background:var(--brand-ink);color:var(--brand)}
+@media (max-width:640px){.mast-in{grid-template-columns:1fr}.mast img{width:120px}}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.facts div{background:var(--surface);padding:16px}
+.facts b{display:block;font:700 26px/1.1 var(--display);color:var(--brand)}
+.facts span{font-size:13px;color:var(--muted)}
+@media (max-width:720px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* reel */
+.reel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.reel figure{margin:0;display:grid;gap:8px}
+.reel img{width:100%;aspect-ratio:6/5;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block}
+.reel figcaption{font-size:13px;color:var(--muted);line-height:1.4}
+.reel figcaption b{color:var(--ink);font-weight:700}
+@media (max-width:860px){.reel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* systems */
+.systems{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.sys{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:grid;gap:12px;align-content:start;min-width:0}
+.statline{font:500 12px/1.4 var(--mono);color:var(--brand);background:var(--chip);border-radius:4px;padding:6px 10px;justify-self:start}
+.sys ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font:500 12px/1 var(--mono);border:1px solid var(--line);border-radius:4px;padding:5px 8px;color:var(--muted)}
+@media (max-width:720px){.systems{grid-template-columns:1fr}}
+
+/* workflow */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;counter-reset:s}
+.flow li{counter-increment:s;border-top:3px solid var(--brand);padding-top:12px;display:grid;gap:6px;align-content:start;min-width:0}
+.flow li::before{content:"STEP " counter(s);font:500 12px/1 var(--mono);letter-spacing:.1em;color:var(--brand)}
+.flow b{font-family:var(--display);text-transform:uppercase;font-size:18px;letter-spacing:.02em}
+.flow p{font-size:14px;color:var(--muted)}
+@media (max-width:900px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
+.note{margin-top:20px;font-size:15px;max-width:72ch}
+
+/* timeline */
+.tl{display:grid;gap:0}
+.tl-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.tl-row time{font:500 14px/1.6 var(--mono);color:var(--brand);font-variant-numeric:tabular-nums}
+.tl-row p{color:var(--muted);font-size:15px;margin-top:4px}
+@media (max-width:520px){.tl-row{grid-template-columns:1fr;gap:4px}}
+
+/* contact */
+.contact{background:var(--brand);color:var(--brand-ink);border-radius:10px;padding:28px;display:grid;gap:14px}
+.contact h2{color:var(--brand-ink)}
+.contact dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0}
+.contact dt{font:500 12px/1.8 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.contact dd{margin:0;user-select:all;word-break:break-word}
+.contact a{color:var(--brand-ink)}
+
+/* published games */
+.feature{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.feature img{width:100%;height:100%;object-fit:cover;display:block;min-height:260px}
+.feature-body{padding:22px 22px 22px 0;display:grid;gap:12px;align-content:start;min-width:0}
+.feature-body ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.kpis{display:flex;flex-wrap:wrap;gap:8px}
+.kpis span{background:var(--chip);border-radius:6px;padding:6px 10px;font-size:14px;color:var(--muted)}
+.kpis b{font:700 18px/1 var(--display);color:var(--brand);font-variant-numeric:tabular-nums}
+.status{font-size:14px;color:var(--muted);border-left:3px solid var(--brand);padding-left:10px}
+.minor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.mg{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;min-width:0}
+.mg:hover{border-color:var(--brand)}
+.mg img{width:72px;height:72px;border-radius:8px;object-fit:cover}
+.mg div{display:grid;gap:4px;min-width:0}
+.mg h3{font-size:17px}
+.mg p{font-size:14px;color:var(--muted)}
+.mg b{color:var(--brand)}
+.credit{font-size:12px;color:var(--muted);margin-top:10px}
+@media (max-width:860px){.feature{grid-template-columns:1fr}.feature-body{padding:0 20px 20px}.minor{grid-template-columns:1fr}}
+</style>
+
+<header class="mast">
+  <div class="mast-in">
+    <img src="avatar.jpg" alt="Portrait of Nguyễn Thiên">
+    <div>
+      <div class="eyebrow" style="color:var(--brand-ink);opacity:.8">Portfolio · Roblox Game Developer</div>
+      <h1>Nguyễn Thiên</h1>
+      <p class="role">Founder of Aerospace Studio · Creator of Attack on Titan: Wings of Freedom · Luau · <span style="white-space:nowrap">AI-assisted development</span></p>
+      <p class="lede">I have been building Roblox games since 2019. I founded Aerospace Studio and created Attack on Titan: Wings of Freedom, a lore-based roleplay game with 146K+ visits that I still run with a small team. I build combat games: ODM gear movement, spell and ability systems, round-based arenas, crate economies and VFX. I use Claude and ChatGPT to ship faster, and I review and test every line they write. I am a final-year Software Engineering student at VKU.</p>
+      <nav class="links" aria-label="Links">
+        <a href="https://drive.google.com/drive/folders/1h_BWfita83kMMVG_wmiCjaXzv3O95VYd?usp=sharing" target="_blank" rel="noopener">Gameplay videos (Drive)</a>
+        <a href="https://www.roblox.com/communities/11511064/Aerospace-Studio" target="_blank" rel="noopener">Aerospace Studio</a>
+        <a href="https://www.roblox.com/users/339433030/profile" target="_blank" rel="noopener">Roblox · Alen (sorrybrb123)</a>
+        <a href="https://github.com/AlenJason" target="_blank" rel="noopener">GitHub · AlenJason</a>
+        <a href="CV_Nguyen_Thien_Roblox_Developer.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="margin-top:40px">
+
+  <section class="facts" aria-label="Quick facts">
+    <div><b>194K+</b><span>Visits across my published games</span></div>
+    <div><b>740+</b><span>Members in my 3 Roblox communities</span></div>
+    <div><b>3</b><span>Published games under my name or studio</span></div>
+    <div><b>2019</b><span>First Roblox Studio projects</span></div>
+  </section>
+
+
+  <section>
+    <div class="section-head"><h2>Published games</h2><span class="eyebrow">Live numbers from Roblox, Oct 2026</span></div>
+    <article class="feature">
+      <img src="games/aot-thumb1.jpg" alt="Wings of Freedom key art: soldiers using ODM gear on the wall">
+      <div class="feature-body">
+        <span class="eyebrow">Founder &amp; lead developer · 2021 – now</span>
+        <h3 style="font-size:28px">Attack on Titan: Wings of Freedom</h3>
+        <div class="kpis"><span><b>146,416</b> visits</span><span><b>362</b> group members</span><span><b>178</b> in Trainee Corps</span></div>
+        <p>A lore-based permadeath roleplay. Players finish trainings in the Trainee Corps, then join one of four military branches: Scouting Legion, Stationary Guard, Military Police or Instructor.</p>
+        <ul>
+          <li>Multi-place universe: Trost District, Wall Maria, Shiganshina, Stohess and a supporter (Patreon) place.</li>
+          <li>ODM gear movement and Titan shifter systems, iterated across dedicated test places.</li>
+          <li>Run as a team: separate work places for scripters, modelers, animators and UI designers.</li>
+        </ul>
+        <p class="status">Status: private for now. The old-engine build needs updates for Roblox's new rules before it can go public again.</p>
+        <div class="tags"><span>Roleplay</span><span>Multi-place</span><span>Team lead</span><span>Live ops</span></div>
+      </div>
+    </article>
+    <div class="minor">
+      <a class="mg" href="https://www.roblox.com/games/7073826383/Attack-On-Titan-Aerospace" target="_blank" rel="noopener">
+        <img src="games/aerospace-icon.jpg" alt="">
+        <div><h3>Attack On Titan: Aerospace</h3><p class="eyebrow">Free-play · 2021</p><p><b>47,896</b> visits · <b>80%</b> likes (79 / 20). Open-world titan hunting with ODM gear and an auto titan spawner.</p></div>
+      </a>
+      <a class="mg" href="https://www.roblox.com/games/9998202903/Aerospace-Shippuden" target="_blank" rel="noopener">
+        <img src="games/shippuden-icon.jpg" alt="">
+        <div><h3>Aerospace Shippuden</h3><p class="eyebrow">Naruto-inspired · Aerospace Studio</p><p><b>92%</b> likes (23 / 2). A second studio title, built on the same combat know-how.</p></div>
+      </a>
+      <a class="mg" href="https://www.roblox.com/communities/11511064/Aerospace-Studio" target="_blank" rel="noopener">
+        <img src="games/studio-icon.jpg" alt="">
+        <div><h3>Aerospace Studio</h3><p class="eyebrow">Founder · 203 members</p><p>My studio group. It publishes the AOT and Naruto games; a Sword Art Online project is in development.</p></div>
+      </a>
+    </div>
+    <p class="credit">Key art on this card is community thumbnail art made for the game (credit @Sinlenor).</p>
+  </section>
+  <section>
+    <div class="section-head"><h2>Gameplay reel</h2><span class="eyebrow">Recent systems, stills from the Drive folder</span></div>
+    <div class="reel">
+      <figure><img src="shots/combat-hud.png" alt="Third-person combat with health and mana bars"><figcaption><b>Combat HUD.</b> Health / Mana bars, overhead name tags, round start button.</figcaption></figure>
+      <figure><img src="shots/spell-ui.png" alt="Spell loadout menu showing the Block spell"><figcaption><b>Spell loadout.</b> Items · Store · Spells · Trade tabs; per-spell class, mana and cooldown.</figcaption></figure>
+      <figure><img src="shots/crates.png" alt="Crate opening screen with specials"><figcaption><b>Crates &amp; specials.</b> Unboxing with server-wide announcements and a level bar.</figcaption></figure>
+      <figure><img src="shots/next-match.png" alt="FFA arena with next match card"><figcaption><b>Round system.</b> FFA rounds with a map rotation card ("Next Match: Crossroad").</figcaption></figure>
+      <figure><img src="shots/vfx-dark.png" alt="Dark vortex ability effect"><figcaption><b>Ability VFX.</b> Dark vortex with particles, glow and ground decal.</figcaption></figure>
+      <figure><img src="shots/vfx-aura.png" alt="Aura effect on a character"><figcaption><b>Aura VFX.</b> Layered spikes and beams anchored to the character.</figcaption></figure>
+      <figure><img src="shots/ffa-map.png" alt="Outdoor FFA map"><figcaption><b>Map rotation.</b> Multiple arenas played in rotation, here the outdoor map.</figcaption></figure>
+      <figure><img src="shots/ability-2021.png" alt="Early 2021 ability test"><figcaption><b>2021 prototypes.</b> Early ability and movement tests, where it started.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Systems I build</h2><span class="eyebrow">Roblox Studio · Luau</span></div>
+    <div class="systems">
+      <article class="sys">
+        <h3>Spell &amp; combat system</h3>
+        <span class="statline">Block · Class: Magic · Mana 50 · Cooldown 12</span>
+        <ul>
+          <li>Data-driven spells defined in ModuleScripts (class, mana cost, cooldown, effect).</li>
+          <li>Server checks mana and cooldowns, so clients cannot spam abilities.</li>
+          <li>Health / Mana HUD and a loadout menu to equip spells.</li>
+        </ul>
+        <div class="tags"><span>RemoteEvents</span><span>ModuleScript</span><span>ScreenGui</span></div>
+      </article>
+      <article class="sys">
+        <h3>Economy, crates &amp; trading</h3>
+        <span class="statline">Items · Store · Spells · Trade</span>
+        <ul>
+          <li>Crate unboxing with rarity rolls and specials (weapon skins).</li>
+          <li>Chat announcement when a player unboxes an item.</li>
+          <li>Inventory, store and trade tabs, plus a level / XP bar.</li>
+        </ul>
+        <div class="tags"><span>Inventory</span><span>Weighted RNG</span><span>TweenService</span></div>
+      </article>
+      <article class="sys">
+        <h3>Round-based multiplayer</h3>
+        <span class="statline">Mode: FFA · Next Match: Crossroad</span>
+        <ul>
+          <li>Round loop: intermission, map load, match, reset.</li>
+          <li>Map rotation across several arenas, with a "next match" card.</li>
+          <li>Built and tested with multiple clients in Studio.</li>
+        </ul>
+        <div class="tags"><span>Server authority</span><span>Multiplayer</span><span>Game loop</span></div>
+      </article>
+      <article class="sys">
+        <h3>VFX &amp; game feel</h3>
+        <span class="statline">ParticleEmitter · Beam · Decal</span>
+        <ul>
+          <li>Ability effects: vortex, auras, impact marks, projectiles.</li>
+          <li>Effects spawned on the client to keep server load low.</li>
+          <li>Effects cleaned up after use to avoid leaking instances.</li>
+        </ul>
+        <div class="tags"><span>VFX</span><span>Animation</span><span>Client effects</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>How I use AI</h2><span class="eyebrow">Claude · ChatGPT · Claude Code</span></div>
+    <ol class="flow">
+      <li><b>Spec</b><p>Write the feature as inputs, server vs. client responsibilities and edge cases before prompting.</p></li>
+      <li><b>Generate</b><p>Ask the AI for a ModuleScript skeleton or a focused function, never a whole game.</p></li>
+      <li><b>Review</b><p>Read every line: validate remotes on the server, disconnect connections, remove deprecated APIs.</p></li>
+      <li><b>Test</b><p>Play-test in Studio with a local server and several clients; reproduce bugs, then fix.</p></li>
+      <li><b>Optimize</b><p>Check the MicroProfiler and script activity; move effects to the client when needed.</p></li>
+    </ol>
+    <p class="note">AI speeds up boilerplate, UI wiring and debugging. Gameplay rules, security checks and final quality are my responsibility, and I treat AI output like a pull request from a junior teammate.</p>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Timeline</h2><span class="eyebrow">Game &amp; software work</span></div>
+    <div class="tl">
+      <div class="tl-row"><time>2019 – 2020</time><div><h3>First AOT prototypes</h3><p>Titan shifter and ODM gear test places; one public test place passed 2,100 visits.</p></div></div>
+      <div class="tl-row"><time>2021</time><div><h3>Founded Aerospace Studio</h3><p>Published Attack On Titan: Aerospace (free-play) and launched Wings of Freedom (roleplay) with its own community groups.</p></div></div>
+      <div class="tl-row"><time>2022 – 2025</time><div><h3>Wings of Freedom grows</h3><p>New districts and maps, supporter place, shifter rework and a team of scripters, modelers, animators and UI designers. Aerospace Shippuden released.</p></div></div>
+      <div class="tl-row"><time>2025</time><div><h3>Magic combat game</h3><p>Spell system, loadout UI, store and trade tabs, ability VFX.</p></div></div>
+      <div class="tl-row"><time>2026</time><div><h3>Arena &amp; crate systems</h3><p>Round-based FFA with map rotation, crates and specials, level progression.</p></div></div>
+      <div class="tl-row"><time>2026</time><div><h3>Unity game development course</h3><p>C# gameplay labs and ShaderLab shaders at VKU (repos on GitHub).</p></div></div>
+      <div class="tl-row"><time>2026 – now</time><div><h3>Sealand Property web platform</h3><p>Real-estate platform with search filters, EN/VI support and booking flows.</p></div></div>
+    </div>
+  </section>
+
+  <section class="contact" aria-label="Contact">
+    <h2>Contact</h2>
+    <dl>
+      <dt>Email</dt><dd>wincute12454@gmail.com</dd>
+      <dt>Phone</dt><dd>0333 428 958</dd>
+      <dt>Location</dt><dd>Đà Nẵng, Việt Nam · remote</dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/AlenJason" target="_blank" rel="noopener">github.com/AlenJason</a></dd>
+    </dl>
+  </section>
+</main>
+
+<style>@page{size:A4;margin:10mm 0}@media print{html{zoom:.7}body{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding-bottom:0}.mast{margin-top:-10mm}.feature,.mg,.sys,.reel figure,.tl-row,.flow li,.contact,.facts{break-inside:avoid}.section-head{break-after:avoid}section{break-inside:auto}.wrap{gap:36px}.reel{grid-template-columns:repeat(4,minmax(0,1fr))!important}.feature{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)!important}.feature-body{padding:22px 22px 22px 0!important}.minor{grid-template-columns:repeat(3,minmax(0,1fr))!important}.flow{grid-template-columns:repeat(5,minmax(0,1fr))!important}.systems{grid-template-columns:repeat(2,minmax(0,1fr))!important}.facts{grid-template-columns:repeat(4,minmax(0,1fr))!important}.mast-in{grid-template-columns:160px 1fr!important}.mast img{width:160px!important}}</style></head></html>
